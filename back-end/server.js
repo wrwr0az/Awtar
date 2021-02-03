@@ -75,7 +75,7 @@ app.get("/api/login/:user/:pass", (req, res) => {
   User.findOne({ userName: req.params.user }, (err, user) => {
     if (err) {
       console.log("Error from server.js line 45: ", err);
-      res.json("user name or password is incorrect from err");
+      res.json(false);
     } else if (user.password === req.params.pass) {
       // Cookies.set("name", "value");
       // console.log(Cookies.get());
