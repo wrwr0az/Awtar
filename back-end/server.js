@@ -46,7 +46,7 @@ const UserRouter = require("./routes/login");
 
 // Require DB Configuration File
 const db_url = require("./db");
-
+console.log(db_url);
 // Establish Database Connection
 mongoose.connect(db_url, { useNewUrlParser: true });
 mongoose.connection.once("open", () => {
