@@ -53,10 +53,10 @@ mongoose.connection.once("open", () => {
   console.log("Connected to Mongo");
 });
 
-app.get("/api/", (req, res) => {
-  console.log("get /");
-  res.json("result from back-end server.js");
-});
+// app.get("/api/", (req, res) => {
+//   console.log("get /");
+//   res.json("result from back-end server.js");
+// });
 
 app.get("/api/Messages", (req, res) => {
   console.log("get /Messages");
