@@ -118,12 +118,12 @@ app.use("/api", UserRouter);
 // });
 
 //serves all our static files from the build directory.
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "front-end/build")));
 
 // After all routes
 // This code essentially serves the index.html file on any unknown routes.
 app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.sendFile(path.join(__dirname, "front-end/build", "index.html"));
   console.log("dir name is: ", __dirname);
 });
 
