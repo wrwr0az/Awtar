@@ -1,7 +1,28 @@
 // Require necessary NPM packages
 const express = require("express");
 const mongoose = require("mongoose");
+
+//Don't forget to install cors (npm i cors)
 const cors = require("cors");
+
+//Make sure to add to your whitelist any website or APIs that connect to your backend.
+var whitelist = [`http://localhost:${PORT}`, "http://example2.com"];
+
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      var message =
+        "The CORS policy for this application does not allow access from origin " +
+        origin;
+      callback(new Error(message), false);
+    }
+  },
+};
+
+app.use(cors(corsOptions));
+
 const Message = require("./models/services.js");
 const User = require("./models/users.js");
 const Cookies = require("js-cookie");
@@ -23,12 +44,12 @@ mongoose.connection.once("open", () => {
 // Instantiate Express Application Object
 const app = express();
 
-app.get("/", (req, res) => {
+app.get("/api/", (req, res) => {
   console.log("get /");
   res.json("result from back-end server.js");
 });
 
-app.get("/Messages", (req, res) => {
+app.get("/api/Messages", (req, res) => {
   console.log("get /Messages");
 
   Message.find({}, (err, messages) => {
@@ -39,7 +60,7 @@ app.get("/Messages", (req, res) => {
   });
 });
 
-app.get("/monitoring/login/:user/:pass", (req, res) => {
+app.get("/api/login/:user/:pass", (req, res) => {
   console.log("THIS FROM SERVER.js Line 42: ");
   let data = "";
   User.findOne({ userName: req.params.user }, (err, user) => {
@@ -72,16 +93,17 @@ app.use(express.json());
 
 const reactPort = 3000;
 // Set CORS headers on response from this API using the `cors` NPM package.
-app.use(
-  cors({ origin: process.env.CLIENT_ORIGIN || `http://localhost:${reactPort}` })
-);
+// app.use(
+//   cors({ origin: process.env.CLIENT_ORIGIN || `http://localhost:${reactPort}` })
+// );
 
 /*** Routes ***/
 
 // Mount imported Routers
-app.use(indexRouter);
-app.use(MessagesRouter);
-app.use(UserRouter);
+
+app.use(`${indexRouter}`);
+app.use(`${MessagesRouter}`);
+app.use(`${UserRouter}`);
 
 // app.use('/',indexRouter);
 // app.use('/articles',articlesRouter);
@@ -92,7 +114,7 @@ const PORT = process.env.PORT || 5000;
 
 // Start the server to listen for requests on a given port
 app.listen(PORT, () => {
-  console.log(`BLOGY => http://localhost:${PORT}`);
+  console.log(`Awtar => http://localhost:${PORT}`);
 });
 
 /*
