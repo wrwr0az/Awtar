@@ -18,7 +18,7 @@ const cors = require("cors");
 
 const PORT = process.env.PORT || 5000;
 //Make sure to add to your whitelist any website or APIs that connect to your backend.
-var whitelist = [`http://localhost:${PORT}`, "http://example2.com"];
+var whitelist = [`http://localhost:${PORT}`, "https://awtar.herokuapp.com"];
 
 var corsOptions = {
   origin: function (origin, callback) {
@@ -94,9 +94,9 @@ app.get("/api/login/:user/:pass", (req, res) => {
 
 const reactPort = 3000;
 // Set CORS headers on response from this API using the `cors` NPM package.
-app.use(
-  cors({ origin: process.env.CLIENT_ORIGIN || `http://localhost:${reactPort}` })
-);
+// app.use(
+//   cors({ origin: process.env.CLIENT_ORIGIN || `http://localhost:${reactPort}` })
+// );
 
 /*** Routes ***/
 
