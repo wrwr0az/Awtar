@@ -102,7 +102,7 @@ const reactPort = 3000;
 
 // Mount imported Routers
 
-app.use(indexRouter);
+// app.use(indexRouter);
 app.use(MessagesRouter);
 app.use(UserRouter);
 
