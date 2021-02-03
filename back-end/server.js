@@ -33,7 +33,7 @@ var corsOptions = {
   },
 };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 const Message = require("./models/services.js");
 const User = require("./models/users.js");
@@ -94,17 +94,17 @@ app.get("/api/login/:user/:pass", (req, res) => {
 
 const reactPort = 3000;
 // Set CORS headers on response from this API using the `cors` NPM package.
-// app.use(
-//   cors({ origin: process.env.CLIENT_ORIGIN || `http://localhost:${reactPort}` })
-// );
+app.use(
+  cors({ origin: process.env.CLIENT_ORIGIN || `http://localhost:${reactPort}` })
+);
 
 /*** Routes ***/
 
 // Mount imported Routers
 
 // app.use(indexRouter);
-app.use("api" + MessagesRouter);
-app.use("api" + UserRouter);
+app.use("/api", MessagesRouter);
+app.use("/api", UserRouter);
 
 // app.use('/',indexRouter);
 // app.use('/articles',articlesRouter);
