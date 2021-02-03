@@ -1,0 +1,671 @@
+.App {
+  text-align: center;
+}
+
+#root {
+  height: 100%;
+  background-image: url("https://designmodo.com/wp-content/uploads/2012/05/914.jpg");
+  background-size: cover;
+  background-size: 100% 50%;
+}
+
+body {
+  width: 100%;
+  height: 90vh;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+  background-image: url("https://designmodo.com/wp-content/uploads/2012/05/914.jpg");
+  background-size: cover;
+  background-size: 100% 50%;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.nav-bar {
+  /* position: fixed; */
+  top: 0;
+  width: 100%;
+  padding-top: 1%;
+  border: solid gray 0.1px;
+  border-radius: 0%;
+  margin: 0% auto;
+  padding-bottom: 1%;
+  /* background-color: rgb(110, 145, 127); */
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+#menu {
+  margin: 0;
+  padding: 0px;
+}
+
+.menu-button {
+  border-radius: 5px;
+}
+.menu-button:active {
+  background-color: white;
+}
+
+.collapse {
+  padding-right: 4%;
+}
+.menu-nav {
+  /* width: 35%; */
+  height: 100%;
+  margin: auto;
+}
+
+.nav-link {
+  color: white;
+}
+
+.nav-link:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.Home {
+  margin: 0;
+  width: 100vr;
+  height: 700px;
+  /* border: solid gray 2px; */
+  /* margin-right: 10%;
+  margin-left: 10%; */
+  /* margin-top: 5px; */
+  margin-top: 68px;
+}
+
+.about {
+  /* border: solid black 2px; */
+  margin: 0;
+  height: 60hr;
+  width: 100vr;
+  padding: 5% 5%;
+  background-image: url("https://designmodo.com/wp-content/uploads/2012/05/914.jpg");
+  background-size: cover;
+  background-size: 100% 50%;
+}
+
+.contact {
+  /* border: solid black 2px; */
+  margin: 0;
+  /* margin-top: 10%; */
+  height: 100hr;
+  width: 100%;
+  /* margin-bottom: 0%; */
+  padding: 2% 0;
+  /* padding-bottom: 0px; */
+  /* margin-top: 0%; */
+  padding-right: 1px;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+.inside-contact {
+  width: 100%;
+  padding: 0% 10%;
+}
+
+.contact-footer {
+}
+
+.contact-icons {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  font-size: 2em;
+  align-items: center;
+  margin: 5px;
+  flex-basis: 100px;
+}
+
+.icon:hover {
+  fill: wheat;
+}
+
+.icon {
+  fill: black;
+}
+
+p {
+  text-align: justify;
+  padding-right: 5px;
+}
+
+.services {
+  /* margin: auto; */
+  /* margin: 5% 2%; */
+  width: 100vr;
+  height: 100hr;
+  /* margin: 0 30%; */
+  /* margin-top: 10%; */
+  margin: 10% 0%;
+  text-align: left;
+  margin-top: 70px;
+  padding-top: 2%;
+  text-align: center;
+}
+
+.service-header {
+  margin-top: 67px;
+}
+
+.text-area {
+  width: 60%;
+  margin: 2% 0;
+}
+
+img {
+  width: 39vh;
+  height: 39vh;
+  border-radius: 2%;
+}
+
+.div-image {
+  width: 100%;
+  height: 100%;
+}
+
+.div-image .project-text {
+  width: 300px;
+  margin: auto;
+  text-align: center;
+  text-align: justify;
+}
+
+img:hover {
+  box-shadow: 10px 10px 5px grey;
+}
+
+.Projects {
+  display: flex;
+  flex-wrap: wrap;
+  position: inherit;
+  margin: 0 5%;
+  margin-top: 20px;
+  /* margin-left: 5%;
+  margin-right: 5%; */
+  justify-content: center;
+}
+
+/* .div-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  position: inherit;
+  margin: 2% 2%;
+  padding: 0% 5%;
+  margin-top: 0px;
+  margin-left: 5%;
+  margin-right: 5%;
+  justify-content: center;
+  align-content: space-evenly;
+  align-items: center;
+  align-self: center;
+  padding-bottom: 5%;
+} */
+
+.gallery-image {
+  margin: 5px 5px;
+}
+
+.project-main {
+  margin: 0 5%;
+  padding: 0 0;
+  justify-content: center;
+  padding-top: 80px;
+  margin-bottom: 5%;
+}
+
+.project-text-header {
+  width: 90%;
+  padding: 0;
+  margin: auto;
+  text-align: justify;
+  justify-content: center;
+}
+
+.project-text-header p {
+  width: 100%;
+}
+
+.Proj {
+  text-align: center;
+  padding: 5px;
+}
+
+.Proj h5 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+}
+
+.component {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  /* padding-top: 2%; */
+  /* margin: 0 5%; */
+  background-color: #fffcfc;
+  /* justify-content: center; */
+  margin: auto;
+  background-image: url("https://designmodo.com/wp-content/uploads/2012/05/914.jpg");
+  background-size: cover;
+  background-size: 100% 50%;
+}
+
+.main-div {
+}
+
+.message-button {
+  position: absolute;
+  right: 20px;
+  border: none;
+  background-color: #d4edda;
+  /* padding-right: 2%; */
+  /* margin-right: 2%; */
+  color: #64976f;
+}
+.message-button:hover {
+  color: black;
+}
+
+.sucess-message {
+  width: 100%;
+  /* padding-top: 41px; */
+
+  text-align: center;
+}
+
+.services-main {
+  padding-top: 0;
+  margin-top: 0;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+/*
+      FLIP
+*/
+
+.div-image {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: white;
+}
+
+.magic-div {
+}
+
+.div-image:hover .overlay {
+  opacity: 0.8;
+}
+
+.text {
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.inside-flip-image {
+  font-weight: bold;
+  margin-top: 50%;
+}
+
+.input-name {
+  width: 100%;
+}
+
+.input-field {
+  margin: 2% 0%;
+}
+
+.input {
+  width: 60%;
+}
+
+.option {
+  margin: 3% 0;
+}
+
+.myOption {
+  text-align: right;
+}
+
+.messages-div {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.message-main-div {
+}
+
+.messages {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: inherit;
+  margin: 0 5%;
+  margin-top: 20px;
+  padding-bottom: 5%;
+  justify-content: center;
+}
+
+.message {
+  width: 280px;
+  height: auto;
+  border: solid black 2px;
+  text-align: center;
+  margin: 2% 2%;
+  padding: 2%;
+  border-radius: 5px;
+  background-color: honeydew;
+  /*add this to make a button in bottom od div*/
+  position: relative;
+}
+
+/*add this to make a button in bottom od div*/
+.DeleteButton {
+  position: absolute;
+  bottom: 10px;
+  left: 40%;
+}
+
+label {
+  float: left;
+}
+
+input[required] + label:after {
+  content: "*";
+  color: red;
+}
+
+.services-div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 58px;
+}
+
+.Form {
+  margin: 2% 5%;
+  margin-top: 15px;
+  margin-bottom: 1%;
+  text-align: center;
+  /* border: 1px solid #a7a9ac; */
+  border-radius: 5px;
+  padding: 1% 2%;
+  background-color: unset;
+}
+
+.get-messages-button {
+  border-radius: 5px;
+  margin: 1%;
+  padding: 1%;
+  background-color: white;
+}
+
+.delAll-messages-button {
+  border-radius: 5px;
+  margin: 1%;
+  padding: 1%;
+  background-color: white;
+}
+
+.get-messages-button:hover {
+  background-color: rgb(212, 212, 212);
+}
+.delAll-messages-button:hover {
+  background-color: rgb(212, 212, 212);
+}
+
+.delete-herf:hover {
+  text-decoration: none;
+  color: red;
+}
+
+.big-image {
+  background-image: url("https://reyada.ostudioseg.com/wp-content/uploads/2020/06/homee.jpg");
+  height: 60%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Login */
+
+.custom-control-label {
+  font-weight: 400;
+}
+
+.forgot-password,
+.forgot-password a {
+  text-align: right;
+  font-size: 13px;
+  padding-top: 10px;
+  color: #7f7d7d;
+  margin: 0;
+}
+
+.forgot-password a {
+  color: #167bff;
+}
+
+.Login-main {
+  width: 60%;
+  padding: 3%;
+  margin: 5%;
+  margin: auto;
+  margin-top: 100px;
+  border: 1px solid #ced4da;
+  text-align: center;
+  background-color: white;
+}
+
+.send-button {
+  width: 30%;
+}
+
+.logout {
+  padding-left: 0px;
+  margin-left: 0px;
+}
+
+.col {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.container {
+  width: 100%;
+  /* direction: ltr; */
+  /* justify-content: left;
+  text-align: justify;
+  text-justify: inter-word; */
+}
+
+.right-to-left img {
+  position: relative;
+  animation: mymove1 3s;
+}
+
+.left-to-right img {
+  position: relative;
+  animation: mymove2 3s;
+}
+
+@keyframes mymove1 {
+  from {
+    left: -50px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+@keyframes mymove2 {
+  from {
+    right: -50px;
+  }
+  to {
+    right: 0px;
+  }
+}
+
+.right-to-left {
+  direction: rtl;
+  /* justify-content: right;
+  text-align: justify; */
+}
+.left-to-right {
+  direction: rtl;
+  flex-direction: row-reverse;
+  /* text-align: justify; */
+}
+
+.row {
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+.container img {
+  border-radius: 5px;
+  width: 330px;
+  height: 330px;
+  box-shadow: 10px 10px 5px grey;
+}
+
+.logo {
+  margin-left: 1%;
+  width: 50px;
+  height: 50px;
+}
+
+.nav-bar img:hover {
+  box-shadow: none;
+}
+
+p {
+  text-align: justify;
+}
+
+.copyright {
+  margin: 0;
+}
+.copyright-div {
+  margin-top: 2%;
+}
+
+.section {
+  text-align: center;
+  width: 50%;
+  margin: auto;
+}
+
+.section .form-control {
+  margin-bottom: 2%;
+}
+
+.section button {
+  padding: 0;
+  width: 100%;
+  background-color: unset;
+  border: 0;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+/* .carddeck-div {
+  width: 100%;
+  margin: 0;
+}
+
+.card-div {
+  width: 100%;
+}
+
+.card-deck .card {
+  flex: 30%;
+  width: 100%;
+} */
