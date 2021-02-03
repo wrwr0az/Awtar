@@ -103,8 +103,8 @@ const reactPort = 3000;
 // Mount imported Routers
 
 // app.use(indexRouter);
-app.use(MessagesRouter);
-app.use(UserRouter);
+app.use("api" + MessagesRouter);
+app.use("api" + UserRouter);
 
 // app.use('/',indexRouter);
 // app.use('/articles',articlesRouter);

@@ -14,7 +14,7 @@ const router = express.Router();
  * URI:           /articles
  * Description:   Get All Articles
  */
-router.get("/api/Messages", (req, res) => {
+router.get("/Messages", (req, res) => {
   Message.find({})
     // Return all Articles as an Array
     .then((allMessages) => {
@@ -40,7 +40,7 @@ router.get("/api/Messages", (req, res) => {
  * Description:  Create a new Article
  */
 
-router.post("/api/Messages", (req, res) => {
+router.post("/Messages", (req, res) => {
   console.log(req);
   Message.create(req.body)
     // On a successful `create` action, respond with 201
@@ -61,7 +61,7 @@ router.post("/api/Messages", (req, res) => {
  * Description:  Delete An Article by Article ID
  */
 // another way (using Callback, and without extra thing)
-router.delete("/api/Messages/:id", (req, res) => {
+router.delete("/Messages/:id", (req, res) => {
   console.log("PARAMS:", req.params);
   // mongoose.Types.ObjectId ('4ed3ede8844f0f351100000c')
   Message.findOneAndDelete({ _id: req.params.id }, (err, result) => {
