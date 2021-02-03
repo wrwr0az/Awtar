@@ -33,7 +33,7 @@ var corsOptions = {
   },
 };
 
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 const Message = require("./models/services.js");
 const User = require("./models/users.js");
