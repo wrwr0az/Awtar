@@ -1,16 +1,28 @@
 // Require necessary NPM packages
 const express = require("express");
 const mongoose = require("mongoose");
+const path = require("path");
+// Instantiate Express Application Object
+const app = express();
+
+/*** Middleware ***/
+
+// Add `bodyParser` middleware which will parse JSON requests
+// into JS objects before they reach the route files.
+//
+// The method `.use` sets up middleware for the Express application
+app.use(express.json());
 
 //Don't forget to install cors (npm i cors)
 const cors = require("cors");
 
+const PORT = process.env.PORT || 5000;
 //Make sure to add to your whitelist any website or APIs that connect to your backend.
 var whitelist = [`http://localhost:${PORT}`, "http://example2.com"];
 
 var corsOptions = {
   origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
       callback(null, true);
     } else {
       var message =
@@ -40,9 +52,6 @@ mongoose.connect(db_url, { useNewUrlParser: true });
 mongoose.connection.once("open", () => {
   console.log("Connected to Mongo");
 });
-
-// Instantiate Express Application Object
-const app = express();
 
 app.get("/api/", (req, res) => {
   console.log("get /");
@@ -83,14 +92,6 @@ app.get("/api/login/:user/:pass", (req, res) => {
   });
 });
 
-/*** Middleware ***/
-
-// Add `bodyParser` middleware which will parse JSON requests
-// into JS objects before they reach the route files.
-//
-// The method `.use` sets up middleware for the Express application
-app.use(express.json());
-
 const reactPort = 3000;
 // Set CORS headers on response from this API using the `cors` NPM package.
 // app.use(
@@ -101,21 +102,31 @@ const reactPort = 3000;
 
 // Mount imported Routers
 
-app.use(`${indexRouter}`);
-app.use(`${MessagesRouter}`);
-app.use(`${UserRouter}`);
+app.use(indexRouter);
+app.use(MessagesRouter);
+app.use(UserRouter);
 
 // app.use('/',indexRouter);
 // app.use('/articles',articlesRouter);
 
 /*** Routes ***/
 // Define PORT for the API to run on
-const PORT = process.env.PORT || 5000;
 
 // Start the server to listen for requests on a given port
-app.listen(PORT, () => {
-  console.log(`Awtar => http://localhost:${PORT}`);
+// app.listen(PORT, () => {
+//   console.log(`Awtar => http://localhost:${PORT}`);
+// });
+
+//serves all our static files from the build directory.
+app.use(express.static(path.join(__dirname, "build")));
+
+// After all routes
+// This code essentially serves the index.html file on any unknown routes.
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
+
+app.listen(PORT);
 
 /*
   C.R.U.D - Actions Table
