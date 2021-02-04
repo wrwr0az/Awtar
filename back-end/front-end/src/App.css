@@ -116,7 +116,7 @@ html {
 
 .Home {
   margin: 0;
-  width: 100vr;
+  width: 100%;
   height: 700px;
   /* border: solid gray 2px; */
   /* margin-right: 10%;
@@ -291,7 +291,7 @@ img:hover {
 }
 
 .component {
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   padding: 0;
   /* padding-top: 2%; */
@@ -692,6 +692,11 @@ div.card-body {
 }
 
 @media only screen and (max-width: 500px) {
+  .container {
+    overflow: hidden;
+    flex: auto;
+  }
+
   .one {
     order: 1;
   }
