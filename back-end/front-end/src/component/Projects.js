@@ -48,49 +48,58 @@ export default class Projects extends Component {
         </div>
         <div className="Projects">{projects}</div>
 
-        {/* <CardDeck className="carddeck-div">
+        <CardDeck className="carddeck-div">
           <Card className="card-div">
-            <Card.Img variant="top" src="holder.js/100px160" />
+            <Card.Img
+              variant="top"
+              src="https://www.ubm-development.com/magazin/wp-content/uploads/2020/03/kl-main-building-d-Kopie.jpg"
+            />
             <Card.Body>
-              <Card.Title>Card title</Card.Title>
+              {/* <Card.Title>Card title</Card.Title> */}
               <Card.Text>
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
                 longer.
               </Card.Text>
             </Card.Body>
-            <Card.Footer>
+            {/* <Card.Footer>
               <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
+            </Card.Footer> */}
           </Card>
           <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
+            <Card.Img
+              variant="top"
+              src="https://www.sustainableplaces.eu/wp-content/uploads/2017/02/SmartBuilding.jpg"
+            />
             <Card.Body>
-              <Card.Title>Card title</Card.Title>
+              {/* <Card.Title>Card title</Card.Title> */}
               <Card.Text>
                 This card has supporting text below as a natural lead-in to
                 additional content.{" "}
               </Card.Text>
             </Card.Body>
-            <Card.Footer>
+            {/* <Card.Footer>
               <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
+            </Card.Footer> */}
           </Card>
           <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
+            <Card.Img
+              variant="top"
+              src="https://roadmap2050.report/static/files/photo-building.jpg"
+            />
             <Card.Body>
-              <Card.Title>Card title</Card.Title>
+              {/* <Card.Title>Card title</Card.Title> */}
               <Card.Text>
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This card has even longer content
                 than the first to show that equal height action.
               </Card.Text>
             </Card.Body>
-            <Card.Footer>
+            {/* <Card.Footer>
               <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
+            </Card.Footer> */}
           </Card>
-        </CardDeck> */}
+        </CardDeck>
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import "./AOS.css";
 import React, { Component } from "react";
 import Menu from "./component/Menu";
 import Home from "./component/Home";

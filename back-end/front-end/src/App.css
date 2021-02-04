@@ -565,15 +565,15 @@ input[required] + label:after {
   text-justify: inter-word; */
 }
 
-.right-to-left img {
+/* .right-to-left img {
   position: relative;
   animation: mymove1 3s;
-}
+} */
 
-.left-to-right img {
+/* .left-to-right img {
   position: relative;
   animation: mymove2 3s;
-}
+} */
 
 @keyframes mymove1 {
   from {
@@ -669,3 +669,33 @@ p {
   flex: 30%;
   width: 100%;
 } */
+
+.card-deck {
+  margin: 5%;
+}
+
+.card-deck .card {
+  background-color: initial;
+  border: unset;
+}
+
+div.card-body {
+  padding: 5% 0%;
+}
+
+.carddeck-div img {
+  border-radius: 5px;
+}
+
+.carddeck-div img:hover {
+  box-shadow: none;
+}
+
+@media only screen and (max-width: 500px) {
+  .one {
+    order: 1;
+  }
+  .two {
+    order: 2;
+  }
+}
