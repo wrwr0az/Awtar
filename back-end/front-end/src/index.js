@@ -4,6 +4,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
+import "react-image-gallery/styles/css/image-gallery.css";
+import "./i18n";
 
 ReactDOM.render(
   <React.StrictMode>

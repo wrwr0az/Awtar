@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
-import Messages from "../Messages";
-import Message from "../Message";
 import Alert from "react-bootstrap/Alert";
 import Cookies from "js-cookie";
 import { signIn } from "../../api";
@@ -114,7 +111,7 @@ export default class Login extends Component {
             Sign in
           </button>
           <p className="forgot-password text-right">
-            Forgot <a href="#">password?</a>
+            Forgot <a href="">password?</a>
           </p>
         </form>
       </div>

@@ -1,37 +1,102 @@
-import React, { Component } from "react";
-import Cookies from "js-cookie";
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from "react-bootstrap";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import FormControl from "react-bootstrap/FormControl";
+import React from "react";
+// import Cookies from "js-cookie";
+import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import logo from "./awtarlogo.jpg";
 
-export default class Menu extends Component {
-  render() {
-    return (
-      <Navbar className="nav-bar" bg="light" expand="lg" fixed="top">
-        <img
-          className="logo"
-          src="https://instagram.fjed6-1.fna.fbcdn.net/v/t51.2885-19/s150x150/81219990_180301129711226_7872102624621756416_n.jpg?_nc_ht=instagram.fjed6-1.fna.fbcdn.net&_nc_ohc=YqmQM5SUi2QAX8_GYL9&tp=1&oh=238da4ee45ad1a26faae14d77f1dee8c&oe=6040A6E7"
-        />
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav menu">
-          <Nav className="mr-auto menu-nav">
-            <Nav.Link className="menu-button" href="/#Home">
-              HOME
+import { useTranslation } from "react-i18next";
+
+function Menu(props) {
+  // class Menu extends Component {
+  //   constructor(props) {
+  //     super(props);
+  //     this.state = {
+  //       currentLang: "",
+  //     };
+  //   }
+
+  // render() {
+
+  const { t, i18n } = useTranslation();
+  const [currentLang, setCurrentLang] = React.useState(i18n.language);
+  // console.log(t);
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+    props.handelLang(lang);
+    setCurrentLang(lang);
+  };
+
+  return (
+    <Navbar className="nav-bar bColor" expand="lg" fixed="top">
+      <img className="logo" src={logo} alt="" />
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav menu">
+        <Nav className="mr-auto menu-nav">
+          {i18n.language === "en" ? (
+            <>
+              <Nav.Link className="menu-button" to="" href="/#Home">
+                {t("nav.btn1")}
+              </Nav.Link>
+              <Nav.Link as={Link} className="menu-button" to="/Projects">
+                {t("nav.btn2")}
+              </Nav.Link>
+              <Nav.Link className="menu-button" to="" href="/#contact-section">
+                {t("nav.btn3")}
+              </Nav.Link>
+              <Nav.Link as={Link} className="menu-button" to="/services">
+                {t("nav.btn4")}
+              </Nav.Link>
+            </>
+          ) : (
+            <>
+              <Nav.Link as={Link} className="menu-button" to="/services">
+                {t("nav.btn4")}
+              </Nav.Link>
+
+              <Nav.Link className="menu-button" to="" href="/#contact-section">
+                {t("nav.btn3")}
+              </Nav.Link>
+              <Nav.Link as={Link} className="menu-button" to="/Projects">
+                {t("nav.btn2")}
+              </Nav.Link>
+              <Nav.Link className="menu-button" to="" href="/#Home">
+                {t("nav.btn1")}
+              </Nav.Link>
+            </>
+          )}
+
+          <div className="languages-div">
+            <Nav.Link
+              as={Link}
+              className="menu-button"
+              onClick={() => changeLanguage("en")}
+              style={
+                currentLang === "en"
+                  ? { backgroundColor: "rgba(83, 87, 90, 0.7)" }
+                  : { backgroundColor: "transparent" }
+              }
+              to=""
+            >
+              EN
             </Nav.Link>
-            <Nav.Link as={Link} className="menu-button" to="/Projects">
-              PROJECTS
+            <Nav.Link
+              as={Link}
+              className="menu-button"
+              onClick={() => changeLanguage("ar")}
+              style={
+                currentLang === "ar"
+                  ? { backgroundColor: "rgba(83, 87, 90, 0.7)" }
+                  : { backgroundColor: "transparent" }
+              }
+              to=""
+            >
+              عربي
             </Nav.Link>
-            <Nav.Link className="menu-button" href="/#contact-section">
-              CONTACT US
-            </Nav.Link>
-            <Nav.Link as={Link} className="menu-button" to="/services">
-              SERVICES
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    );
-  }
+          </div>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  );
 }
+
+export default Menu;

@@ -8,12 +8,13 @@ import Alert from "react-bootstrap/Alert";
 // import "firebase/auth";
 // import "firebase/firestore";
 import { insertOneMessage } from "../api";
-import axios from "axios";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import swal from "sweetalert";
 
-export default class Services extends Component {
+import { withTranslation } from "react-i18next";
+
+class Services extends Component {
   constructor() {
     super();
     this.state = {
@@ -77,9 +78,9 @@ export default class Services extends Component {
     );
 
     if (
-      this.state.name != "" &&
+      this.state.name !== "" &&
       this.state.mobile.length === 10 &&
-      this.state.text != ""
+      this.state.text !== ""
     ) {
       this.insertToDB();
       swal("Good job!", "Message Sent", "success").then((ok) => {
@@ -106,11 +107,11 @@ export default class Services extends Component {
         error_name += "The insert name is wrong\n";
       }
       console.log(this.state.mobile.length);
-      if (this.state.mobile.length != 10) {
+      if (this.state.mobile.length !== 10) {
         console.log("mobile error");
         error_name += "The insert number is wrong\n";
       }
-      if (this.state.location == "" || this.state.location == "Choose...") {
+      if (this.state.location === "" || this.state.location === "Choose...") {
         console.log("location error");
         error_name += "The choosing location is wrong\n";
       }
@@ -209,57 +210,56 @@ export default class Services extends Component {
       <div className="service-header">
         {this.state.show ? <this.AlertDismissibleExample /> : null}
 
-        <div className="services-div">
+        <div className="services-div bgImage">
           <Form className="Form">
-            <Form.Group controlId="formGroupEmail">
-              <Form.Label>Name</Form.Label>
+            <Form.Group>
+              <Form.Label>{this.props.t("services.input1")}</Form.Label>
               <Form.Control
                 id="name"
                 type="text"
-                placeholder="Enter your first name"
+                placeholder={this.props.t("services.place1")}
                 onChange={(e) => this.handleNameChange(e)}
                 value={this.state.name}
                 required
               />
             </Form.Group>
-            <Form.Group controlId="formGroupEmail">
-              <Form.Label>Mobile Number</Form.Label>
+            <Form.Group>
+              <Form.Label>{this.props.t("services.input2")}</Form.Label>
               <Form.Control
                 type="number"
-                placeholder="Enter your number"
+                placeholder={this.props.t("services.place2")}
                 onChange={(e) => this.handleMobileChange(e)}
                 value={this.state.mobile}
                 required
               />
             </Form.Group>
-            <Form.Group controlId="formGroupEmail">
-              <Form.Label>Email address</Form.Label>
+            <Form.Group>
+              <Form.Label>{this.props.t("services.input3")}</Form.Label>
               <Form.Control
                 type="email"
-                placeholder="Enter email"
+                placeholder={this.props.t("services.place3")}
                 onChange={(e) => this.handleEmailChange(e)}
                 value={this.state.email}
               />
             </Form.Group>
-            <Form.Group controlId="formGridState">
-              <Form.Label>State</Form.Label>
+            <Form.Group>
+              <Form.Label>{this.props.t("services.input4")}</Form.Label>
               <Form.Control
                 as="select"
-                defaultValue="Choose..."
                 onChange={(e) => this.handelLocationChange(e)}
                 value={this.state.location}
                 required
               >
-                <option>Choose...</option>
-                <option>1 الزهرة</option>
-                <option>2 الزهرة</option>
-                <option>3 الزهرة</option>
-                <option>4 الزهرة</option>
-                <option>5 الزهرة</option>
+                <option>{this.props.t("services.place4")}</option>
+                <option>{this.props.t("services.locations.1")}</option>
+                <option>{this.props.t("services.locations.2")}</option>
+                <option>{this.props.t("services.locations.3")}</option>
+                <option>{this.props.t("services.locations.4")}</option>
+                <option>{this.props.t("services.locations.5")}</option>
               </Form.Control>
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlTextarea1">
-              <Form.Label>Example textarea</Form.Label>
+              <Form.Label>{this.props.t("services.input5")}</Form.Label>
               <Form.Control
                 as="textarea"
                 rows={7}
@@ -274,7 +274,7 @@ export default class Services extends Component {
               type="submit"
               onClick={(e) => this.handleSubmit(e)}
             >
-              Send
+              {this.props.t("services.btn")}
             </Button>
           </Form>
         </div>
@@ -282,3 +282,5 @@ export default class Services extends Component {
     );
   }
 }
+
+export default withTranslation()(Services);

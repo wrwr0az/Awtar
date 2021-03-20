@@ -33,7 +33,6 @@ export default class Content extends Component {
       publishedOn.getMinutes() > 10
         ? publishedOn.getMinutes()
         : `0${publishedOn.getMinutes()}`;
-    const seconds = publishedOn.getSeconds();
 
     return (
       <div className="message">
@@ -41,7 +40,7 @@ export default class Content extends Component {
         <p>
           <BsPerson /> {this.props.name}
         </p>
-        {this.props.email != "" ? (
+        {this.props.email !== "" ? (
           <p>
             <AiOutlineMail /> {this.props.email}
           </p>
@@ -68,7 +67,7 @@ export default class Content extends Component {
         </p>
 
         <div className="DeleteButton">
-          <a className="delete-herf" href="#" onClick={this.deleteMessage}>
+          <a className="delete-herf" href="" onClick={this.deleteMessage}>
             Delete <BsTrash />
           </a>
         </div>

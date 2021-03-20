@@ -13,8 +13,12 @@
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "i18next": "^19.9.2",
+    "i18next-browser-languagedetector": "^6.0.1",
+    "i18next-http-backend": "^1.1.1",
     "js-cookie": "^2.2.1",
     "mongoose": "^5.11.13",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "react-i18next": "^11.8.10"
   }
 }

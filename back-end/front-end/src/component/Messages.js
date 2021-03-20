@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import Message from "./Message";
 import Cookies from "js-cookie";
 import Login from "./login/Login";

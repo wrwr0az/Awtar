@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 export default class Images extends Component {
   render() {
@@ -6,7 +6,7 @@ export default class Images extends Component {
     return (
       <div className="Proj">
         <div className="div-image">
-          <img src={this.props.image} />
+          <img src={this.props.image} alt="" />
         </div>
       </div>
     );

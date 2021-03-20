@@ -3,7 +3,7 @@
 }
 
 #root {
-  height: 100%;
+  height: 100vh;
   background-image: url("https://designmodo.com/wp-content/uploads/2012/05/914.jpg");
   background-size: cover;
   background-size: 100% 50%;
@@ -17,7 +17,7 @@ body {
 }
 html {
   scroll-behavior: smooth;
-  background-image: url("https://designmodo.com/wp-content/uploads/2012/05/914.jpg");
+  /* background-image: url("https://designmodo.com/wp-content/uploads/2012/05/914.jpg"); */
   background-size: cover;
   background-size: 100% 50%;
 }
@@ -74,14 +74,19 @@ html {
   top: 0;
   width: 100%;
   padding-top: 1%;
-  border: solid gray 0.1px;
+  /* border: solid gray 0.1px; */
   border-radius: 0%;
   margin: 0% auto;
   padding-bottom: 1%;
-  /* background-color: rgb(110, 145, 127); */
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  /* animation: gradient 15s ease infinite; */
+}
+
+.languages-div {
+  display: flex;
+  position: absolute;
+  margin-left: 45%;
 }
 
 #menu {
@@ -106,14 +111,24 @@ html {
 }
 
 .nav-link {
-  color: white;
+  color: white !important;
 }
 
 .nav-link:hover {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(165, 161, 161);
   color: black;
 }
 
+.bColor {
+  background-color: rgb(51, 57, 73);
+  /* 343a40  */
+  color: white !important;
+}
+
+/* .submit:hover {
+  width: 30%;
+  background-color: white !important;
+} */
 .Home {
   margin: 0;
   width: 100%;
@@ -131,25 +146,36 @@ html {
   height: 60hr;
   width: 100vr;
   padding: 5% 5%;
-  background-image: url("https://designmodo.com/wp-content/uploads/2012/05/914.jpg");
+  /* background-image: url("https://designmodo.com/wp-content/uploads/2012/05/914.jpg"); */
   background-size: cover;
   background-size: 100% 50%;
 }
 
-.contact {
+.contact-container {
   /* border: solid black 2px; */
   margin: 0;
   /* margin-top: 10%; */
   height: 100hr;
   width: 100%;
+  margin: auto;
+  border-radius: 10px;
   /* margin-bottom: 0%; */
   padding: 2% 0;
   /* padding-bottom: 0px; */
   /* margin-top: 0%; */
   padding-right: 1px;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+}
+
+/* .contact-container {
+} */
+
+.cotactus {
+  width: 55%;
+  margin: auto;
+  border-radius: 10px;
+  /* background-color: #33415c; */
 }
 
 .inside-contact {
@@ -207,12 +233,6 @@ p {
   margin: 2% 0;
 }
 
-img {
-  width: 39vh;
-  height: 39vh;
-  border-radius: 2%;
-}
-
 .div-image {
   width: 100%;
   height: 100%;
@@ -225,15 +245,17 @@ img {
   text-align: justify;
 }
 
-img:hover {
+/* img:hover {
   box-shadow: 10px 10px 5px grey;
-}
+} */
 
 .Projects {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   position: inherit;
-  margin: 0 5%;
+  margin: 0 0;
+  margin: auto;
   margin-top: 20px;
   /* margin-left: 5%;
   margin-right: 5%; */
@@ -261,17 +283,15 @@ img:hover {
 }
 
 .project-main {
-  margin: 0 5%;
-  padding: 0 0;
-  justify-content: center;
-  padding-top: 80px;
-  margin-bottom: 5%;
+  margin: 0% 5%;
+  padding-top: 9vh;
 }
 
 .project-text-header {
   width: 90%;
   padding: 0;
   margin: auto;
+  margin-top: 2%;
   text-align: justify;
   justify-content: center;
 }
@@ -281,8 +301,11 @@ img:hover {
 }
 
 .Proj {
+  width: 44vh;
   text-align: center;
   padding: 5px;
+  margin: 0;
+  margin: auto;
 }
 
 .Proj h5 {
@@ -299,7 +322,7 @@ img:hover {
   background-color: #fffcfc;
   /* justify-content: center; */
   margin: auto;
-  background-image: url("https://designmodo.com/wp-content/uploads/2012/05/914.jpg");
+  /* background-image: url("https://designmodo.com/wp-content/uploads/2012/05/914.jpg"); */
   background-size: cover;
   background-size: 100% 50%;
 }
@@ -340,6 +363,7 @@ img:hover {
 .div-image {
   position: relative;
   width: 100%;
+  margin-bottom: 10%;
 }
 
 .image {
@@ -462,6 +486,7 @@ input[required] + label:after {
   align-items: center;
   justify-content: center;
   margin-top: 58px;
+  margin-bottom: 0;
 }
 
 .Form {
@@ -470,7 +495,7 @@ input[required] + label:after {
   margin-bottom: 1%;
   text-align: center;
   /* border: 1px solid #a7a9ac; */
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 1% 2%;
   background-color: unset;
 }
@@ -510,6 +535,12 @@ input[required] + label:after {
   background-size: cover;
 }
 
+.bgImage {
+  background-image: url("https://designmodo.com/wp-content/uploads/2012/05/914.jpg");
+  background-size: cover;
+  background-size: 85% 35%;
+}
+
 /* Login */
 
 .custom-control-label {
@@ -532,12 +563,14 @@ input[required] + label:after {
 .Login-main {
   width: 60%;
   padding: 3%;
-  margin: 5%;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 60px;
+  position: relative;
+  top: 50px;
   border: 1px solid #ced4da;
   text-align: center;
   background-color: white;
+  border-radius: 10px;
 }
 
 .send-button {
@@ -604,10 +637,10 @@ input[required] + label:after {
   /* text-align: justify; */
 }
 
-.row {
+/* .row {
   justify-content: center;
   margin-bottom: 5%;
-}
+} */
 
 .container img {
   border-radius: 5px;
@@ -643,8 +676,8 @@ p {
   margin: auto;
 }
 
-.section .form-control {
-  margin-bottom: 2%;
+.form-control {
+  border-radius: 10px !important;
 }
 
 .section button {
@@ -656,11 +689,19 @@ p {
   font-size: 20px;
 }
 
-/* .carddeck-div {
+.carddeck-div {
   width: 100%;
   margin: 0;
+  justify-content: center;
 }
 
+.card-div img {
+  width: 39vh;
+  height: 39vh;
+  border-radius: 2%;
+}
+
+/*
 .card-div {
   width: 100%;
 }
@@ -671,7 +712,7 @@ p {
 } */
 
 .card-deck {
-  margin: 5%;
+  margin: auto;
 }
 
 .card-deck .card {
@@ -691,16 +732,98 @@ div.card-body {
   box-shadow: none;
 }
 
+.container {
+  overflow: auto;
+}
+
+.cardText {
+  text-align: center;
+}
+
+.cardTitle {
+  font-size: 32px;
+}
+
+.image-gallery-image {
+  height: 600px;
+  width: 100vh;
+}
+
+.image-gallery-image img {
+  width: 100%;
+}
+
+.image-gallery-content {
+  width: 100%;
+}
+.image-gallery {
+}
 @media only screen and (max-width: 500px) {
-  .container {
+  /* .container {
     overflow: hidden;
     flex: auto;
+  } */
+
+  .bgImage {
+    background-size: 90% 10%;
   }
 
+  .cotactus {
+    width: 100%;
+  }
+
+  .Proj {
+    width: 100%;
+    margin: auto;
+  }
+
+  .image-gallery-image {
+    height: auto;
+  }
+
+  .card-div img {
+    width: 36vh;
+    margin: auto;
+  }
   .one {
     order: 1;
   }
   .two {
     order: 2;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .cotactus {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .cotactus {
+    width: 65%;
+  }
+
+  .contact-footer {
+    width: 65%;
+    margin: auto;
+  }
+}
+
+hr {
+  height: 12px;
+  background: black;
+}
+
+.copyright-div {
+  padding-bottom: 15px;
+}
+
+@media only screen and (max-width: 992px) {
+  .languages-div {
+    display: unset;
+    position: unset;
+    padding-left: 0;
+    margin: auto;
   }
 }

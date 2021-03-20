@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import projects from "./data";
-import Gallery from "./Gallery";
 // import { useHistory } from "react-router-dom";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import Card from "react-bootstrap/Card";
 
 export default class Proj extends Component {
   handleClick = (e) => {
@@ -21,19 +19,33 @@ export default class Proj extends Component {
   render() {
     const project = this.props.project;
     // const gallery = <Gallery index={this.props.location} />;
-    const index = this.props.location;
 
     return (
       <Router>
         <div className="Proj">
           <div className="div-image">
-            <img src={project.img} />
+            {/* <img src={project.img} />
             <div class="overlay" onClick={(e) => this.handleClick(e)}>
               <div class="text">
                 {project.name}{" "}
                 <p className="inside-flip-image">click for more</p>
               </div>
-            </div>
+            </div> */}
+
+            <Card className="card-div">
+              <Card.Title className="cardTitle">{project.name}</Card.Title>
+              <Card.Img
+                variant="top"
+                src={project.img}
+                onClick={(e) => this.handleClick(e)}
+              />
+              <Card.Body>
+                <Card.Text className="cardText">{project.details}</Card.Text>
+              </Card.Body>
+              {/* <Card.Footer>
+                      <small className="text-muted">Last updated 3 mins ago</small>
+                    </Card.Footer> */}
+            </Card>
           </div>
         </div>
       </Router>

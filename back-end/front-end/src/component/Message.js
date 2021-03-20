@@ -39,7 +39,7 @@ export default class Message extends Component {
     });
 
     let showMessages =
-      this.props.allMessages != "" ? allMessages : <h4>لايوجد رسائل</h4>;
+      this.props.allMessages !== "" ? allMessages : <h4>لايوجد رسائل</h4>;
     return showMessages;
   }
 }
