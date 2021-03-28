@@ -2,6 +2,8 @@ import React, { Component } from "react";
 // import { useHistory } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import Card from "react-bootstrap/Card";
+import AOS from "aos";
+import state from "./state.png";
 
 export default class Proj extends Component {
   handleClick = (e) => {
@@ -17,8 +19,10 @@ export default class Proj extends Component {
   };
 
   render() {
+    AOS.init();
     const project = this.props.project;
     // const gallery = <Gallery index={this.props.location} />;
+    let animationDirection = this.props.location % 2 == 1 ? true : false;
 
     return (
       <Router>
@@ -32,13 +36,23 @@ export default class Proj extends Component {
               </div>
             </div> */}
 
-            <Card className="card-div">
+            <Card
+              className="card-div"
+              data-aos={`zoom-in-${animationDirection ? "left" : "right"}`}
+            >
               <Card.Title className="cardTitle">{project.name}</Card.Title>
               <Card.Img
                 variant="top"
                 src={project.img}
                 onClick={(e) => this.handleClick(e)}
               />
+              {/* <div className="project-state">{project.state}</div> */}
+              <div className="state-div">
+                <img className="state-img" src={state} />
+                <div className="state-text">
+                  <p>{project.state}</p>
+                </div>
+              </div>
               <Card.Body>
                 <Card.Text className="cardText">{project.details}</Card.Text>
               </Card.Body>

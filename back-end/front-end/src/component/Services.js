@@ -104,20 +104,20 @@ class Services extends Component {
       let error_name = "";
       if (this.state.name === "") {
         console.log("name error");
-        error_name += "The insert name is wrong\n";
+        error_name += `${this.props.t("services-alert.name")}\n`;
       }
       console.log(this.state.mobile.length);
       if (this.state.mobile.length !== 10) {
         console.log("mobile error");
-        error_name += "The insert number is wrong\n";
+        error_name += `${this.props.t("services-alert.number")}\n`;
       }
       if (this.state.location === "" || this.state.location === "Choose...") {
         console.log("location error");
-        error_name += "The choosing location is wrong\n";
+        error_name += `${this.props.t("services-alert.location")}\n`;
       }
       if (this.state.text === "") {
         console.log("text error");
-        error_name += `Please write your message`;
+        error_name += `${this.props.t("services-alert.message")}`;
       }
       this.setState({
         show: true,
@@ -154,7 +154,7 @@ class Services extends Component {
         onClose={() => this.setState({ ...this.state, show: false })}
         dismissible
       >
-        <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+        <Alert.Heading>{this.props.t("services-alert.error")}</Alert.Heading>
         <pre>{this.state.error_name}</pre>
       </Alert>
     );
@@ -213,7 +213,9 @@ class Services extends Component {
         <div className="services-div bgImage">
           <Form className="Form">
             <Form.Group>
-              <Form.Label>{this.props.t("services.input1")}</Form.Label>
+              <Form.Label className="textLabel">
+                {this.props.t("services.input1")}
+              </Form.Label>
               <Form.Control
                 id="name"
                 type="text"
@@ -224,7 +226,9 @@ class Services extends Component {
               />
             </Form.Group>
             <Form.Group>
-              <Form.Label>{this.props.t("services.input2")}</Form.Label>
+              <Form.Label className="textLabel">
+                {this.props.t("services.input2")}
+              </Form.Label>
               <Form.Control
                 type="number"
                 placeholder={this.props.t("services.place2")}
@@ -234,7 +238,9 @@ class Services extends Component {
               />
             </Form.Group>
             <Form.Group>
-              <Form.Label>{this.props.t("services.input3")}</Form.Label>
+              <Form.Label className="textLabel">
+                {this.props.t("services.input3")}
+              </Form.Label>
               <Form.Control
                 type="email"
                 placeholder={this.props.t("services.place3")}
@@ -243,7 +249,9 @@ class Services extends Component {
               />
             </Form.Group>
             <Form.Group>
-              <Form.Label>{this.props.t("services.input4")}</Form.Label>
+              <Form.Label className="textLabel">
+                {this.props.t("services.input4")}
+              </Form.Label>
               <Form.Control
                 as="select"
                 onChange={(e) => this.handelLocationChange(e)}
@@ -259,7 +267,9 @@ class Services extends Component {
               </Form.Control>
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlTextarea1">
-              <Form.Label>{this.props.t("services.input5")}</Form.Label>
+              <Form.Label className="textLabel">
+                {this.props.t("services.input5")}
+              </Form.Label>
               <Form.Control
                 as="textarea"
                 rows={7}

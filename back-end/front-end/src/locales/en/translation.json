@@ -30,6 +30,13 @@
     "input5": "Message",
     "btn": "Send"
   },
+  "services-alert": {
+    "error": "Sorry, There is/are some errors please check the follwoing",
+    "name": "Please Enter Your Name",
+    "number": "Please Enter Your Number",
+    "location": "Please Select a Location",
+    "message": "Please Write your Message"
+  },
   "contactus": {
     "header": "Contact Us",
     "cardHeader": "Let's get in touch",

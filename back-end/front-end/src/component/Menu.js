@@ -3,8 +3,9 @@ import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "./awtarlogo.jpg";
-
+import { logOutCallback } from "../api";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
 function Menu(props) {
   // class Menu extends Component {
@@ -25,6 +26,12 @@ function Menu(props) {
     props.handelLang(lang);
     setCurrentLang(lang);
   };
+
+  const logout = () => {
+    logOutCallback();
+  };
+
+  let history = useHistory();
 
   return (
     <Navbar className="nav-bar bColor" expand="lg" fixed="top">
@@ -75,7 +82,7 @@ function Menu(props) {
                   ? { backgroundColor: "rgba(83, 87, 90, 0.7)" }
                   : { backgroundColor: "transparent" }
               }
-              to=""
+              to="#"
             >
               EN
             </Nav.Link>
@@ -88,11 +95,23 @@ function Menu(props) {
                   ? { backgroundColor: "rgba(83, 87, 90, 0.7)" }
                   : { backgroundColor: "transparent" }
               }
-              to=""
+              to="#"
             >
               عربي
             </Nav.Link>
           </div>
+
+          <Nav.Link
+            className="Logout"
+            onClick={() => {
+              logout();
+              props.handelSetUser("");
+              history.push("/Login");
+              localStorage.removeItem("token");
+            }}
+          >
+            Logout
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

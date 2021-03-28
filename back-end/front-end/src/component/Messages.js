@@ -2,14 +2,29 @@ import React, { Component } from "react";
 import Message from "./Message";
 import Cookies from "js-cookie";
 import Login from "./login/Login";
-import { getAllMessage } from "../api";
-import { deleteMessageByID } from "../api";
+import {
+  deleteMessageByID,
+  getAllMessage,
+  fetchProtected,
+  refreshToken,
+} from "../api";
+import { First } from "react-bootstrap/esm/PageItem";
+// import { useRedirect } from "hookrouter";
+import { Redirect } from "react-router-dom";
+import axios from "axios";
+import { withRouter } from "react-router-dom";
 
 export default class Messages extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       data: [],
+      check: false,
+      first: true,
+      token:
+        this.props.user != ""
+          ? this.props.user.accesstoken
+          : localStorage.getItem("token"),
     };
   }
   getAllMessages = () => {
@@ -32,9 +47,85 @@ export default class Messages extends Component {
     this.setState({ data: newMessages });
   };
 
+  changeCheck = (e) => {
+    this.setState({ ...this.state, check: e });
+  };
+
+  fetch = async () => {
+    let headers = {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${this.state.token}`,
+    };
+    const result = await axios.post(
+      "http://localhost:5000/api/protected",
+      headers
+    );
+    console.log("INSIDE FETCH", result.data);
+    if (result.data == true) {
+      this.changeCheck(true);
+      return true;
+    }
+    return false;
+  };
+
+  checkRefreshToken = async () => {
+    const result = refreshToken();
+  };
+  // checkRefreshToken;
+
+  componentDidMount() {
+    const check = this.fetch();
+    // this.setState({ ...this.state, check: check });
+  }
+
+  needToLogin = () => {
+    console.log("inside neet to login");
+    return (
+      <button
+        className="goToLogin"
+        onClick={(e) => {
+          window.location.href = `/Login`;
+        }}
+      >
+        go to login site
+      </button>
+    );
+  };
+
   render() {
-    let check = Cookies.get("name");
+    // const checkFetch = this.fetch();
+    // console.log(checkFetch);
+    // if (checkFetch == true) {
+    //   console.log(checkFetch);
+    //   this.changeCheck(true);
+    // }
+    console.log(this.state.check);
+    // console.log(check);
+    // console.log(this.props);
+    // console.log(Cookies.get());
+    // if (localStorage.getItem("token") && this.state.first) {
+
+    //   this.setState({ first: false });
+    // }
+
+    // await (
+    //   await fetch("http://localhost:5000/api/protected", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       authorization: `Bearer ${localStorage.getItem("token")}`,
+    //     },
+    //   })
+    // ).json();
+
+    // console.log(result.data);
+    // if (result.data) {
+    //   this.changeCheck(true);
+    // }
+    // console.log(result);
+
     // const data = this.state.data;
+    const { check } = this.state;
 
     return (
       <div className="message-main-div">
@@ -66,7 +157,7 @@ export default class Messages extends Component {
             </div>
           </div>
         ) : (
-          <Login />
+          <this.needToLogin />
         )}
       </div>
     );

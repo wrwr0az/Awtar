@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "awtar-font";
+  src: local("awtar-font"), url(./component/images/Ara_Hamah_Homs.ttf);
+}
+
 .App {
   text-align: center;
 }
@@ -7,6 +12,8 @@
   background-image: url("https://designmodo.com/wp-content/uploads/2012/05/914.jpg");
   background-size: cover;
   background-size: 100% 50%;
+  font-family: "awtar-font";
+  font-size: 150%;
 }
 
 body {
@@ -81,6 +88,7 @@ html {
   /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
   background-size: 400% 400%;
   /* animation: gradient 15s ease infinite; */
+  font-size: 100%;
 }
 
 .languages-div {
@@ -250,7 +258,7 @@ p {
 } */
 
 .Projects {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
   position: inherit;
@@ -596,6 +604,7 @@ input[required] + label:after {
   /* justify-content: left;
   text-align: justify;
   text-justify: inter-word; */
+  overflow: hidden !important;
 }
 
 /* .right-to-left img {
@@ -742,6 +751,7 @@ div.card-body {
 
 .cardTitle {
   font-size: 32px;
+  width: 100%;
 }
 
 .image-gallery-image {
@@ -826,4 +836,75 @@ hr {
     padding-left: 0;
     margin: auto;
   }
+}
+
+.project-state {
+  position: absolute;
+  top: 36.9px;
+  left: -1px;
+  width: 100px;
+  background-color: rgb(51, 57, 73);
+  color: white;
+  padding: 0;
+  margin: auto;
+  border-radius: 4px;
+}
+
+.state-img {
+  width: 100px !important;
+  height: 60px !important;
+  position: absolute;
+  top: 21.7px;
+  left: -7px;
+}
+
+.state-text {
+  width: 100px !important;
+  height: 60px !important;
+  position: absolute;
+  top: 9.2%;
+  left: -10px;
+  color: white;
+}
+
+.state-text p {
+  text-align: unset !important;
+  padding: 0;
+  margin: 0;
+}
+
+/* .map-container {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+.map-container iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+} */
+
+.Logout {
+  position: absolute;
+  right: 0px;
+  border-radius: 8px;
+}
+
+@media only screen and (max-width: 991px) {
+  .Logout {
+    position: relative;
+    border-radius: 8px;
+  }
+}
+
+.goToLogin {
+  position: absolute;
+  top: 15%;
+  left: 35%;
+  border-radius: 10px;
+  padding: 8px;
+  background-color: rgba(129, 168, 129, 0.356);
 }

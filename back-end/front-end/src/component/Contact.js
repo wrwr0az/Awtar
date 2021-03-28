@@ -6,7 +6,7 @@ import { MdEmail } from "react-icons/md";
 import { IoLogoTwitter } from "react-icons/io";
 
 import "./ContactUs.css";
-
+import AOS from "aos";
 import { useTranslation } from "react-i18next";
 
 export default function Contact(props) {
@@ -24,6 +24,8 @@ export default function Contact(props) {
   //       messageFocus: false,
   //     };
   //   }
+
+  AOS.init();
 
   const { t, i18n } = useTranslation();
   const [name, setName] = React.useState("");
@@ -170,7 +172,7 @@ export default function Contact(props) {
                       </button>
                     </form> */}
 
-          <div className="cotactus bColor">
+          <div className="cotactus bColor" data-aos="zoom-in">
             <form action="index.html" autoComplete="off">
               <h3 className="title">{t("contactus.formHeader")}</h3>
               <div
@@ -190,6 +192,7 @@ export default function Contact(props) {
                   onBlur={(e) => {
                     setNameFocus(e);
                   }}
+                  dir={currentLang === "ar" ? "rtl" : "ltr"}
                 />
                 <label
                   htmlFor=""
@@ -218,6 +221,7 @@ export default function Contact(props) {
                   onBlur={(e) => {
                     setEmailFocus(e);
                   }}
+                  dir={currentLang === "ar" ? "rtl" : "ltr"}
                 />
                 <label
                   htmlFor=""
@@ -246,6 +250,7 @@ export default function Contact(props) {
                   onBlur={(e) => {
                     setPhoneFocus(e);
                   }}
+                  dir={currentLang === "ar" ? "rtl" : "ltr"}
                 />
                 <label
                   htmlFor=""
@@ -273,6 +278,7 @@ export default function Contact(props) {
                   onBlur={(e) => {
                     setMessageFocus(e);
                   }}
+                  dir={currentLang === "ar" ? "rtl" : "ltr"}
                 ></textarea>
                 <label
                   htmlFor=""

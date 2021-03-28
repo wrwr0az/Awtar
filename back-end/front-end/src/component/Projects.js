@@ -31,6 +31,21 @@ export default class Projects extends Component {
     //   <Gallery project={this.props.projects} gallery={this.state.gallery} />
     // );
 
+    const map = (
+      <div
+        id="map-container-google-1"
+        className="z-depth-1-half map-container"
+        style={{ height: "500px" }}
+      >
+        <iframe
+          src="https://maps.google.com/maps?q=jeddah&t=&z=12&ie=UTF8&iwloc=&output=embed"
+          frameborder="0"
+          style={{ border: 0 }}
+          allowfullscreen
+        ></iframe>
+      </div>
+    );
+
     return (
       <div className="bgImage">
         {" "}
@@ -52,6 +67,7 @@ export default class Projects extends Component {
           <div className="Projects">
             <CardDeck className="carddeck-div">{projects}</CardDeck>
           </div>
+          {/* {map} */}
         </div>
       </div>
     );

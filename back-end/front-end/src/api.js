@@ -18,8 +18,46 @@ const insertOneMessage = (data) => {
   return axios.post(`${API_URL}/api/Messages/`, data);
 };
 
-const signIn = (userName, password) => {
-  return axios.get(`${API_URL}/api/login/${userName}/${password}`);
+const signIn = async (userName, password) => {
+  // return axios.get(`${API_URL}/api/login/${userName}/${password}`);
+  let body = {
+    userName: userName,
+    password: password,
+  };
+  return await axios.post(`${API_URL}/api/login/`, body, {
+    withCredentials: true,
+  });
 };
 
-export { getAllMessage, deleteMessageByID, insertOneMessage, signIn };
+const refreshToken = async () => {
+  // console.log(API_URL);
+
+  return fetch(`${API_URL}/refresh_token`, {
+    withCredentials: true, // Needed to include the cookie
+  });
+};
+
+const fetchProtected = async () => {
+  return await fetch(`${API_URL}/api/protected`, {
+    headers: {
+      authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
+};
+
+const logOutCallback = async () => {
+  await fetch("http://localhost:4000/logout", {
+    method: "POST",
+    credentials: "include", // Needed to include the cookie
+  });
+};
+
+export {
+  getAllMessage,
+  deleteMessageByID,
+  insertOneMessage,
+  signIn,
+  refreshToken,
+  fetchProtected,
+  logOutCallback,
+};
